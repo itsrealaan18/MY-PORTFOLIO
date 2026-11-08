@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHANCHI MOH.AAN | Full Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of GHANCHI MOH.AAN: full stack developer, UI/UX designer and programmer.">
+  <meta name="theme-color" content="#05060d">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo" id="loaderLogo">GM</div>
+      <div class="loader-bar"><span id="loaderBar"></span></div>
+      <div class="loader-pct" id="loaderPct">0%</div>
+    </div>
+  </div>
+  <div id="transition" aria-hidden="true"></div>
+  <div id="progress" aria-hidden="true"></div>
+  <div id="cursorGlow" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header id="nav">
+    <a href="#home" class="brand" id="brand">GM<span>.</span></a>
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav id="menu" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#coding">Coding</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="shapes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="hero-bg-word" aria-hidden="true">PORTFOLIO</div>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1 class="hero-name" id="heroName" aria-label="Name"></h1>
+          <p class="hero-title" id="heroTitle"></p>
+          <p class="typing">I'm a <span id="typed"></span><b class="caret"></b></p>
+          <p class="hero-intro" id="heroIntro"></p>
+          <div class="btn-row">
+            <a href="#projects" class="btn btn-primary magnetic">Explore My Work</a>
+            <a href="assets/resume.pdf" id="resumeBtn" class="btn btn-ghost magnetic" download>Download Resume</a>
+            <a href="#contact" class="btn btn-ghost magnetic">Contact Me</a>
+          </div>
+          <div class="social-row" id="heroSocials"></div>
+        </div>
+        <div class="hero-photo reveal">
+          <div class="frame">
+            <div class="frame-glow"></div>
+            <img id="heroPhoto" alt="Portrait of GHANCHI MOH.AAN" width="520" height="650">
+            <span class="tag t1">React</span><span class="tag t2">Node.js</span><span class="tag t3">UI/UX</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-ind" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">01 / About</p>
+        <h2 class="section-title split">About Me</h2>
+        <div class="about-grid">
+          <div class="about-photo reveal"><img id="aboutPhoto" alt="" loading="lazy" width="400" height="500"></div>
+          <div class="about-text">
+            <div id="aboutParas" class="reveal"></div>
+            <div class="stats" id="stats"></div>
+            <div class="cards" id="aboutCards"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">02 / Skills</p>
+        <h2 class="section-title split">Technical Skills</h2>
+        <div class="skills-toolbar reveal">
+          <p class="muted">Levels are self-assessed and editable. Hover a skill to see its level.</p>
+          <div>
+            <button class="btn btn-ghost btn-sm" id="editSkills" aria-pressed="false">Edit skills</button>
+            <button class="btn btn-ghost btn-sm" id="resetSkills" hidden>Reset</button>
+            <button class="btn btn-ghost btn-sm" id="exportSkills" hidden>Copy JSON</button>
+          </div>
+        </div>
+        <div id="skillGrid" class="skill-grid"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">03 / Work</p>
+        <h2 class="section-title split">Featured Projects</h2>
+        <div id="projectGrid" class="project-grid"></div>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">04 / Journey</p>
+        <h2 class="section-title split">Experience &amp; Education</h2>
+        <div id="timeline" class="timeline"></div>
+      </div>
+    </section>
+
+    <!-- CODING PROFILES -->
+    <section id="coding" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">05 / Coding</p>
+        <h2 class="section-title split">Coding Profiles</h2>
+        <div id="profileLinks" class="profile-links"></div>
+        <div id="githubLive" class="github-live" hidden>
+          <div class="gh-stats" id="ghStats"></div>
+          <div class="glass reveal">
+            <h3>GitHub Contribution Graph</h3>
+            <div class="graph-wrap"><img id="ghGraph" alt="GitHub contribution graph" loading="lazy"></div>
+          </div>
+          <h3 class="sub reveal">Latest Repositories</h3>
+          <div id="repoGrid" class="repo-grid"></div>
+        </div>
+        <p class="muted note reveal">GitHub figures come live from the public GitHub API. Other platforms are linked rather than scraped, so no statistic here is invented.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">06 / Services</p>
+        <h2 class="section-title split">What I Offer</h2>
+        <div id="serviceGrid" class="service-grid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">07 / Contact</p>
+        <h2 class="section-title split">Let's Work Together</h2>
+        <div class="contact-grid">
+          <form id="contactForm" class="glass reveal" novalidate>
+            <div class="field"><label for="cName">Name</label><input id="cName" name="name" autocomplete="name" required minlength="2"><small class="err"></small></div>
+            <div class="field"><label for="cEmail">Email</label><input id="cEmail" name="email" type="email" autocomplete="email" required><small class="err"></small></div>
+            <div class="field"><label for="cSubject">Subject</label><input id="cSubject" name="subject" required minlength="3"><small class="err"></small></div>
+            <div class="field"><label for="cMsg">Message</label><textarea id="cMsg" name="message" rows="5" required minlength="10"></textarea><small class="err"></small></div>
+            <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn-primary magnetic" type="submit" id="sendBtn">Send Message</button>
+            <p id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+          <div class="contact-info reveal" id="contactInfo"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="container footer-grid">
+      <div><a href="#home" class="brand" id="footBrand"></a><p class="muted" id="footTag"></p></div>
+      <nav aria-label="Footer" class="foot-links">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#coding">Coding</a><a href="#services">Services</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="social-row" id="footSocials"></div>
+    </div>
+    <div class="container foot-bottom"><span id="copy"></span><button id="toTop" class="to-top magnetic" aria-label="Back to top">↑</button></div>
+  </footer>
+
+  <!-- Project modal -->
+  <dialog id="projectModal">
+    <button class="modal-close" aria-label="Close">×</button>
+    <div id="modalBody"></div>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
